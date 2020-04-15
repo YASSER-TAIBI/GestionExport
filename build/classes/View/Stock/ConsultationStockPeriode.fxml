@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1600.0" styleClass="root" stylesheets="@../../Styles/css/FigureDeStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Stock.ConsultationStockPeriodeController">
+   <children>
+      <TableView fx:id="tableSituationStock" blendMode="MULTIPLY" layoutX="182.0" layoutY="315.0" maxWidth="1.7976931348623157E308" prefHeight="431.0" prefWidth="1258.0" styleClass="table-row-cell" stylesheets="@../Styles/css/FigureDeStyle.css">
+         <columns>
+            <TableColumn fx:id="codeColumn" prefWidth="118.99993896484375" text="Code" />
+            <TableColumn fx:id="DateColumn" prefWidth="180.99996948242188" text="Date" />
+            <TableColumn fx:id="qteInitialColumn" prefWidth="183.0" text="Qte Total Initial" />
+            <TableColumn fx:id="qteAchatColumn" prefWidth="161.0" text="Qte Total Achat" />
+            <TableColumn fx:id="qteVenteColumn" prefWidth="154.0" text="Qte Total Vente" />
+            <TableColumn fx:id="qtePerteColumn" minWidth="0.0" prefWidth="157.0" text="Qte Total Perte" />
+            <TableColumn fx:id="prixMoyenColumn" prefWidth="140.0" text="Prix Moyen " />
+            <TableColumn fx:id="qteFinalColumn" minWidth="0.0" prefWidth="163.0" text="Qte Total Final" />
+         </columns>
+      </TableView>
+      <Pane layoutX="182.0" layoutY="196.0" prefHeight="106.0" prefWidth="1258.0" styleClass="pane" stylesheets="@../../Styles/css/FigureDeStyle.css">
+         <children>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1093.0" layoutY="10.0" onMouseClicked="#recherchMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Styles/img/magnifyingglass-ConvertImage.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <Label layoutX="136.0" layoutY="21.0" text="Date Operation debut: " />
+            <DatePicker fx:id="dateOperDebut" layoutX="303.0" layoutY="14.0" prefHeight="32.0" prefWidth="234.0" promptText="Sélectionner Date..." stylesheets="@../../Styles/css/FigureDeStyle.css" />
+            <Label layoutX="664.0" layoutY="22.0" text="Date Operation Fin: " />
+            <DatePicker fx:id="dateOperFin" layoutX="810.0" layoutY="15.0" prefHeight="32.0" prefWidth="234.0" promptText="Sélectionner Date..." stylesheets="@../../Styles/css/FigureDeStyle.css" />
+            <Label layoutX="201.0" layoutY="67.0" text="Code Article: " />
+            <TextField fx:id="txtCode" alignment="CENTER" layoutX="302.0" layoutY="61.0" maxWidth="1.7976931348623157E308" onKeyReleased="#searche" prefHeight="32.0" prefWidth="234.0" promptText="code" styleClass="StyleRaduis" stylesheets="@../Styles/css/FigureDeStyle.css">
+               <effect>
+                  <Blend />
+               </effect>
+            </TextField>
+            <ImageView fx:id="btnRafrechaire" fitHeight="38.0" fitWidth="42.0" layoutX="1211.0" layoutY="62.0" onMouseClicked="#refrechTableMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Styles/img/aperture-ConvertImage.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="484.0" layoutY="109.0" prefHeight="55.0" prefWidth="654.0" styleClass="pane" stylesheets="@../../Styles/css/FigureDeStyle.css">
+         <children>
+            <Label layoutX="111.0" layoutY="5.0" prefHeight="44.0" prefWidth="435.0" styleClass="label2" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Consultation Stock Periode" />
+         </children>
+      </Pane>
+      <Label layoutX="1153.0" layoutY="765.0" text="Montant Total: " />
+      <TextField fx:id="montantTotalField" alignment="CENTER" disable="true" layoutX="1268.0" layoutY="760.0" prefHeight="31.0" prefWidth="173.0" promptText="Montant" styleClass="StyleRaduis" />
+   </children>
+</AnchorPane>

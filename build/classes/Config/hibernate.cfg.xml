@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/GESTION_EXPORT</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">pass</property>
+    <!-- 
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.1.5:3306/GESTION_COMMANDE</property>
+    <property name="hibernate.connection.username">user</property>
+    <property name="hibernate.connection.password">!kal!0687*</property>
+    -->
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    <!--<property name="hbm2ddl.auto">create</property> -->
+    <property name="hbm2ddl.auto">update</property>
+    <property name="show_sql">true</property>
+    <mapping class="dao.Entity.Utilisateur"/>
+    <mapping class="dao.Entity.Article"/>
+    <mapping class="dao.Entity.DetailOperation"/>
+    <mapping class="dao.Entity.Sequenceur"/>
+    <mapping class="dao.Entity.SituationStock"/>
+    <mapping class="dao.Entity.SituationCaisse"/>
+    <mapping class="dao.Entity.Menu"/>
+    <mapping class="dao.Entity.Habilitation"/>
+    <mapping class="dao.Entity.CompteClient"/>
+    <mapping class="dao.Entity.DetailCompteClient"/>
+    <mapping class="dao.Entity.Journee"/>
+  </session-factory>
+</hibernate-configuration>

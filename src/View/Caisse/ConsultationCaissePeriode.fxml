@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1600.0" styleClass="root" stylesheets="@../../Styles/css/FigureDeStyle.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Caisse.ConsultationCaissePeriodeController">
+   <children>
+      <TableView fx:id="tableSituationCaisse" blendMode="MULTIPLY" layoutX="138.0" layoutY="284.0" maxWidth="1.7976931348623157E308" prefHeight="431.0" prefWidth="1327.0" styleClass="table-row-cell" stylesheets="@../Styles/css/FigureDeStyle.css">
+         <columns>
+            <TableColumn fx:id="dateOperationColumn" minWidth="0.0" prefWidth="140.0" text="Date Operation" />
+            <TableColumn fx:id="montantInitialColumn" prefWidth="114.0" text="M.Initial" />
+            <TableColumn fx:id="montantAchatColumn" prefWidth="113.0" text="M.Achat" />
+            <TableColumn fx:id="montantVenteColumn" prefWidth="119.0" text="M.Vente" />
+            <TableColumn fx:id="montantReglementColumn" minWidth="0.0" prefWidth="134.0" text="M.Reglement" />
+            <TableColumn fx:id="montantDepenceColumn" prefWidth="121.0" text="M.Depence" />
+            <TableColumn fx:id="montantVirementColumn" minWidth="0.0" prefWidth="117.0" text="M.Virement" />
+            <TableColumn fx:id="montantVirementAchatColumn" minWidth="0.0" prefWidth="171.0" text="M.Virement Achat" />
+            <TableColumn fx:id="montantProfilOperationColumn" minWidth="0.0" prefWidth="161.0" text="M.Profil Opera" />
+            <TableColumn fx:id="montantFinalColumn" minWidth="0.0" prefWidth="137.0" text="M.Final" />
+         </columns>
+      </TableView>
+      <Pane layoutX="139.0" layoutY="202.0" prefHeight="69.0" prefWidth="1327.0" styleClass="pane" stylesheets="@../../Styles/css/FigureDeStyle.css">
+         <children>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1126.0" layoutY="12.0" onMouseClicked="#recherchMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Styles/img/magnifyingglass-ConvertImage.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <Label layoutX="144.0" layoutY="25.0" text="Date Operation debut: " />
+            <DatePicker fx:id="dateOperDebut" layoutX="311.0" layoutY="18.0" prefHeight="32.0" prefWidth="234.0" promptText="Sélectionner Date..." stylesheets="@../../Styles/css/FigureDeStyle.css" />
+            <Label layoutX="689.0" layoutY="25.0" text="Date Operation Fin: " />
+            <DatePicker fx:id="dateOperFin" layoutX="836.0" layoutY="18.0" prefHeight="32.0" prefWidth="234.0" promptText="Sélectionner Date..." stylesheets="@../../Styles/css/FigureDeStyle.css" />
+            <ImageView fx:id="btnRafrechaire" fitHeight="38.0" fitWidth="42.0" layoutX="1285.0" layoutY="27.0" onMouseClicked="#refrechTableMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Styles/img/aperture-ConvertImage.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="537.0" layoutY="109.0" prefHeight="55.0" prefWidth="529.0" styleClass="pane" stylesheets="@../../Styles/css/FigureDeStyle.css">
+         <children>
+            <Label layoutX="39.0" layoutY="5.0" prefHeight="44.0" prefWidth="445.0" styleClass="label2" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Consultation Caisse Periode" />
+         </children>
+      </Pane>
+      <Label layoutX="1160.0" layoutY="736.0" text="Montant Total: " />
+      <TextField fx:id="montantTotalField" alignment="CENTER" disable="true" layoutX="1276.0" layoutY="729.0" prefHeight="31.0" prefWidth="182.0" promptText="Montant" styleClass="StyleRaduis" />
+   </children>
+</AnchorPane>
